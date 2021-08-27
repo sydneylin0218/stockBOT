@@ -44,6 +44,7 @@
 from ArticutAPI import Articut
 from requests import post
 from requests import codes
+from fc_info import information
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -203,61 +204,12 @@ if __name__ == "__main__":
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
     
-    print("resultDICT")
     
-    #產業別爬蟲
-    URL = "https://goodinfo.tw/StockInfo/StockDetail.asp?STOCK_ID="+ resultDICT["symbol"]
-    print(URL)
+    result_infoDICT = information(resultDICT["symbol"])
     
-    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    resultDICT.update(result_infoDICT)
     
-    r = requests.post(url=URL,headers=headers)
-    
-    html =BeautifulSoup(r.content, "html.parser")
-    
-    #基本資料__名稱
-    
-    table = html.findAll("table")[40]
-    
-    table_row_name=table.findAll("tr")[1]
-    td_name = table_row_name.findAll("td")[1]
-    
-    name = td_name.text
-    resultDICT["name"] = name
-    
-    #基本資料__產業別
-    
-    table_row_industry=table.findAll("tr")[2]
-    
-    td_industry=table_row_industry.findAll("td")[1]
-
-    industry=td_industry.text
-    
-    #industry寫入resultDICT
-    
-    resultDICT["industry"] = industry
-    
-    
-    
-    #基本資料__市值
-    table_row_value=table.findAll("tr")[4]
- 
-    td_value = table_row_value.findAll("td")[3]
-
-    value = td_value.text
-    resultDICT["value"] = value    
-    
-    #基本資料_主要業務
-    
-    table_row_business=table.findAll("tr")[14]
-
-    td_business = table_row_business.findAll("td")[0]
-
-    business = td_business.text
-    
-    resultDICT["business"] = business
-    #resultDICT
-    print(resultDICT) 
+    print(resultDICT)
     
     
     
