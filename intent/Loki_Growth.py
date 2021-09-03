@@ -25,47 +25,36 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[聯發科]成長力":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]成長力分析":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]成長性":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]成長指標":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]每股盈餘成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]營收年成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]營業利益年成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]獲利年成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]的成長情形":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]稅後淨利年成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     if utterance == "[聯發科]資產年成長率":
-        # write your code here
-        pass
+        resultDICT["function"] = "growth"
 
     return resultDICT

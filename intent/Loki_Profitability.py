@@ -25,67 +25,51 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[聯發科]ROA及ROE":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]ROEROA":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]ROE及ROA":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]利潤比率":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]存貨周轉率":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]營運周轉能力":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]獲利[相關]指標":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]獲利情形":
-        # write your code here
-        pass
-
+        resultDICT["function"] = "profitability"
+    
     if utterance == "[聯發科]獲利情況":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]獲利指標":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]獲利能力":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]的ROA":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]的ROE":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]股東權益報酬率":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[聯發科]資產報酬率":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     if utterance == "[連發科]應收帳款週轉率":
-        # write your code here
-        pass
+        resultDICT["function"] = "profitability"
 
     return resultDICT
