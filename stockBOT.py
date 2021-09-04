@@ -51,8 +51,18 @@ import json
 import math
 try:
     from intent import Loki_symbol
+    from intent import Loki_Safety
+    from intent import Loki_information
+    from intent import Loki_revenue
+    from intent import Loki_Profitability
+    from intent import Loki_Growth
 except:
     from .intent import Loki_symbol
+    from .intent import Loki_Safety
+    from .intent import Loki_information
+    from .intent import Loki_revenue
+    from .intent import Loki_Profitability
+    from .intent import Loki_Growth
 
 with open("account.info", encoding="utf-8") as f:
     accountDICT = json.loads(f.read())
@@ -180,6 +190,24 @@ def runLoki(inputLIST, filterLIST=[]):
                 # symbol
                 if lokiRst.getIntent(index, resultIndex) == "symbol":
                     resultDICT = Loki_symbol.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # Safety
+                if lokiRst.getIntent(index, resultIndex) == "Safety":
+                    resultDICT = Loki_Safety.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # information
+                if lokiRst.getIntent(index, resultIndex) == "information":
+                    resultDICT = Loki_information.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)     
+                
+                # revenue
+                if lokiRst.getIntent(index, resultIndex) == "revenue":
+                    resultDICT = Loki_revenue.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)       
+                
+                # Profitability
+                if lokiRst.getIntent(index, resultIndex) == "Profitability":
+                    resultDICT = Loki_Profitability.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)          
+                    
+                # Growth
+                if lokiRst.getIntent(index, resultIndex) == "Growth":
+                    resultDICT = Loki_Growth.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)                
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -197,6 +225,37 @@ if __name__ == "__main__":
     inputLIST = ['台積電基本資料','台積電的成交價','台積電昨日收盤價','台積電的基本資料','關於台積電的資訊','我想知道台積電的基本資料']
     testLoki(inputLIST, ['symbol'])
     print("")
+    
+    # Safety
+    print("[TEST] Safety")
+    inputLIST = ['聯發科負債','聯發科安全嗎','聯發科安全性','聯發科流動比','聯發科負債比','聯發科速動比','聯發科償債能力','聯發科安全性分析','聯發科安全性指標','聯發科流速動比率','聯發科現金流量比','聯發科利息保障倍數','聯發科是不是安全的股票']
+    testLoki(inputLIST, ['Safety'])
+    print("")
+    
+    # information
+    print("[TEST] information")
+    inputLIST = ['台積電的基本資料','關於台積電個股的資料','關於台積電公司的資訊','關於台積電股票的資料']
+    testLoki(inputLIST, ['information'])
+    print("")
+    
+    # revenue
+    print("[TEST] revenue")
+    inputLIST = ['季營收台積電','台積電近一季營收','近一季營收台積電','台積電的近一季營收是多少']
+    testLoki(inputLIST, ['revenue'])
+    print("")
+    
+    # Profitability
+    print("[TEST] Profitability")
+    inputLIST = ['聯發科ROEROA','聯發科的ROA','聯發科的ROE','聯發科ROA及ROE','聯發科ROE及ROA','聯發科利潤比率','聯發科獲利情形','聯發科獲利情況','聯發科獲利指標','聯發科獲利能力','聯發科存貨周轉率','聯發科資產報酬率','聯發科營運周轉能力','聯發科獲利相關指標','聯發科股東權益報酬率','連發科應收帳款週轉率']
+    testLoki(inputLIST, ['Profitability'])
+    print("")
+    
+    # Growth
+    print("[TEST] Growth")
+    inputLIST = ['聯發科成長力','聯發科成長性','聯發科成長指標','聯發科成長力分析','聯發科的成長情形','聯發科營收年成長率','聯發科獲利年成長率','聯發科資產年成長率','聯發科每股盈餘成長率','聯發科營業利益年成長率','聯發科稅後淨利年成長率']
+    testLoki(inputLIST, ['Growth'])
+    print("")
+    
 
     # 輸入其它句子試看看
     inputLIST = ["聯發科營收年成長率"]
