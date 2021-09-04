@@ -199,7 +199,7 @@ if __name__ == "__main__":
     print("")
 
     # 輸入其它句子試看看
-    inputLIST = ["2330的基本資料"]
+    inputLIST = ["聯發科營收年成長率"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))

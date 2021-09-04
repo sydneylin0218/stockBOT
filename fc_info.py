@@ -56,14 +56,46 @@ def growth(symbol):
     revenue_YOY = td_revenue.text
     result_growthDICT["revenue_YOY"] = revenue_YOY
     
-    table_row_growth_profit = table.findAll("tr")[15]
-    td_growth_profit = table_row_growth_profit.findAll("td")[1]
-    growth_profit_YOY = td_growth_profit.text
-    result_growthDICT["growth_profit_YOY"] = growth_profit_YOY
+    table_row_gross_profit = table.findAll("tr")[15]
+    td_gross_profit = table_row_gross_profit.findAll("td")[1]
+    gross_profit_YOY = td_gross_profit.text
+    result_growthDICT["gross_profit_YOY"] = gross_profit_YOY
     
 
     table_row_operating_income=table.findAll("tr")[16]
     td_operating_income = table_row_operating_income.findAll("td")[1]
     operating_income_YOY = td_operating_income.text
-    print(operating_income_YOY)    
+    result_growthDICT["operating_income_YOY"] = operating_income_YOY
+    
+    table_row_NIBT=table.findAll("tr")[17]
+    td_NIBT = table_row_NIBT.findAll("td")[1]
+    NIBT_YOY = td_NIBT.text
+    result_growthDICT["NIBT_YOY"] = NIBT_YOY
+
+    table_row_NI=table.findAll("tr")[18]
+    td_NI = table_row_NI.findAll("td")[1]
+    NI_YOY = td_NI.text
+    result_growthDICT["NI_YOY"] = NI_YOY
+    
+    table_row_EPS=table.findAll("tr")[20]
+    td_EPS = table_row_EPS.findAll("td")[1]
+    EPS_YOY = td_EPS.text
+    result_growthDICT["EPS_YOY"] = EPS_YOY
+    
+    table_row_total_assets_growth=table.findAll("tr")[50]
+    td_total_assets_growth = table_row_total_assets_growth.findAll("td")[1]
+    total_assets_growth = td_total_assets_growth.text
+    result_growthDICT["total_assets_growth"] = total_assets_growth
+    
+    return result_growthDICT
+
+
+    
+    
+    
+    
+    
+    
+    
+    
     
