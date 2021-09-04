@@ -45,6 +45,7 @@ from ArticutAPI import Articut
 from requests import post
 from requests import codes
 from fc_info import information
+from fc_info import growth
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -263,10 +264,13 @@ if __name__ == "__main__":
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
     
-    
-    result_infoDICT = information(resultDICT["symbol"])
-    
-    resultDICT.update(result_infoDICT)
+    if resultDICT["function"] == "information":
+        result_infoDICT = information(resultDICT["symbol"])
+        resultDICT.update(result_infoDICT)
+    elif resultDICT["function"] == "growth":
+        result_growthDICT = growth(resultDICT["symbol"])
+        resultDICT.update(result_growthDICT)
+
     
     print(resultDICT)
     
