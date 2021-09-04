@@ -24,6 +24,8 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["function"] = None
+    
     if utterance == "[聯發科]成長力":
         resultDICT["function"] = "growth"
 

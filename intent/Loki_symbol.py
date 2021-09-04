@@ -28,6 +28,8 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["symbol"] = None
+    
     if utterance == "[台積電]的[基本資料]":
         for k in companyDICT.keys():
             if args[0] in companyDICT[k]:
