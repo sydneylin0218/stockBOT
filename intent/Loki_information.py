@@ -27,19 +27,24 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[台積電]的[基本資料]":
-        if args[0] in companyDICT and args[1] in ("基本資料","基本資訊","資訊"):
-            resultDICT["function"] = "information"
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+                resultDICT["function"] = "information"
+        
 
     if utterance == "關於[台積電]個[股]的[資料]":
-        if args[0] in companyDICT and args[1] in ("基本資料","基本資訊","資訊"):
-            resultDICT["function"] = "information"
-
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+                resultDICT["function"] = "information"
+                
     if utterance == "關於[台積電]公司的[資訊]":
-        if args[0] in companyDICT and args[1] in ("基本資料","基本資訊","資訊"):
-            resultDICT["function"] = "information"
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+                resultDICT["function"] = "information"
 
     if utterance == "關於[台積電]股票的[資料]":
-        if args[0] in companyDICT and args[1] in ("基本資料","基本資訊","資訊"):
-            resultDICT["function"] = "information"
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+                resultDICT["function"] = "information"
 
     return resultDICT
