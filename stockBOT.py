@@ -276,7 +276,7 @@ if __name__ == "__main__":
         
 
     if resultDICT["function"] == "information":
-        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
     elif resultDICT["function"] == "information":
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
     elif resultDICT["symbol"] == None:
