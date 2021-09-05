@@ -3,7 +3,9 @@
 
 import discord
 import json
-
+from fc_info import information
+from fc_info import growth
+from DICT import companyDICT
 
 with open("account.info", encoding="utf-8") as f:
     accountDICT = json.loads(f.read())
@@ -33,7 +35,7 @@ class BotClient(discord.Client):
             if msg == 'ping ping':
                 await message.reply('pong pong')
             else:
-                inputLIST = ["聯發科的基本資料"]
+                inputLIST = [msg]
                 filterLIST = []
                 resultDICT = runLoki(inputLIST, filterLIST)
                 print("Result => {}".format(resultDICT))
@@ -46,16 +48,14 @@ class BotClient(discord.Client):
                 elif resultDICT["function"] == "growth":
                     result_growthDICT = growth(resultDICT["symbol"])
                     resultDICT.update(result_growthDICT)
-                    
-            
                 if resultDICT["function"] == "information":
-                    print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
                 elif resultDICT["function"] == "information":
-                    print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
                 elif resultDICT["symbol"] == None:
-                    print("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
+                    await message.reply("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
                 elif resultDICT["function"] == None:
-                    print("不確定您要找哪一類的資訊！請再輸入一次要查的資料類別！")
+                    await message.reply("不確定您要找哪一類的資訊！請再輸入一次要查的資料類別！")
                                     
 
 if __name__ == "__main__":
