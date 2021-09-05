@@ -260,7 +260,7 @@ if __name__ == "__main__":
     
 
     # 輸入其它句子試看看
-    inputLIST = ["聯發科的基本資料"]
+    inputLIST = ["關於8150股票的資料"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     if resultDICT["function"] == "information":
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
     elif resultDICT["function"] == "information":
-        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
     elif resultDICT["symbol"] == None:
         print("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
     elif resultDICT["function"] == None:

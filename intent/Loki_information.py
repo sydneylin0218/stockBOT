@@ -30,23 +30,23 @@ def getResult(inputSTR, utterance, args, resultDICT):
     
     if utterance == "[台積電]的[基本資料]":
         for k in companyDICT.keys():
-            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊","資料"):
                 resultDICT["function"] = "information"
         
 
     if utterance == "關於[台積電]個[股]的[資料]":
         for k in companyDICT.keys():
-            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊","資料"):
                 resultDICT["function"] = "information"
                 
     if utterance == "關於[台積電]公司的[資訊]":
         for k in companyDICT.keys():
-            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊","資料"):
                 resultDICT["function"] = "information"
 
     if utterance == "關於[台積電]股票的[資料]":
         for k in companyDICT.keys():
-            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊"):
+            if args[0] in companyDICT[k] and args[1] in ("基本資料","基本資訊","資訊","資料"):        
                 resultDICT["function"] = "information"
 
     return resultDICT
