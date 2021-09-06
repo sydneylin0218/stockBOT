@@ -24,39 +24,42 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    resultDICT["function"] = None
+    
     
     if utterance == "[聯發科]成長力":
-        resultDICT["function"] = "growth"
-
+        resultDICT["fun_growth"] = True
+        
     if utterance == "[聯發科]成長力分析":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]成長性":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]成長指標":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]每股盈餘成長率":
-        resultDICT["function"] = "growth"
-
+        resultDICT["fun_growth"] = True
+        
     if utterance == "[聯發科]營收年成長率":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]營業利益年成長率":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]獲利年成長率":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]的成長情形":
-        resultDICT["function"] = "growth"
-
+        resultDICT["fun_growth"] = True
+        
     if utterance == "[聯發科]稅後淨利年成長率":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
 
     if utterance == "[聯發科]資產年成長率":
-        resultDICT["function"] = "growth"
+        resultDICT["fun_growth"] = True
+    
+    if utterance == "[聯發科]獲利成長情形":
+        resultDICT["fun_growth"] = True
 
     return resultDICT

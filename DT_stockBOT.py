@@ -42,19 +42,21 @@ class BotClient(discord.Client):
                 
                 print(resultDICT)
                 
-                if resultDICT["function"] == "information":
+                if  resultDICT["fun_information"] == True:
                     result_infoDICT = information(resultDICT["symbol"])
                     resultDICT.update(result_infoDICT)
-                elif resultDICT["function"] == "growth":
+                elif resultDICT["fun_growth"] == True:
                     result_growthDICT = growth(resultDICT["symbol"])
                     resultDICT.update(result_growthDICT)
-                if resultDICT["function"] == "information":
-                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
-                elif resultDICT["function"] == "information":
-                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值"+resultDICT["value"]+"\n主要業務："+resultDICT["business"])    
+                    
+            
+                if resultDICT["fun_information"] == True:
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
+                elif resultDICT["fun_growth"] == True:
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
                 elif resultDICT["symbol"] == None:
                     await message.reply("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
-                elif resultDICT["function"] == None:
+                else:
                     await message.reply("不確定您要找哪一類的資訊！請再輸入一次要查的資料類別！")
                                     
 

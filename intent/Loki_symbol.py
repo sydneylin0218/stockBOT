@@ -48,7 +48,22 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "[聯發科][營收]年成長率":
         for k in companyDICT.keys():
             if args[0] in companyDICT[k] :
-                resultDICT["symbol"] = k        
+                resultDICT["symbol"] = k     
+                
+    if utterance == "[台積電][成長力]":
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] :
+                resultDICT["symbol"] = k     
+
+    if utterance == "[聯發科]的成長[情形]":
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] :
+                resultDICT["symbol"] = k     
+                
+    if utterance == "[聯發科]的獲利成長[情形]":
+        for k in companyDICT.keys():
+            if args[0] in companyDICT[k] :
+                resultDICT["symbol"] = k     
     
 
     return resultDICT
