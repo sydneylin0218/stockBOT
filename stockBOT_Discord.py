@@ -73,11 +73,6 @@ async def on_message(message):
                                            "function": "",
                                            "updatetime":"",
                                            "completed": False}     
-            for k in lokiResultDICT.keys():    # 將 Loki Intent 的結果，存進 Global mscDICT 變數，可替換成 Database。
-                if k == "":
-                    mscDICT[client.user.id]["symbol"] = lokiResultDICT["symbol"]
-                elif k == "member":
-                    mscDICT[client.user.id]["funcition"] = lokiResultDICT["function"]
                 
                 
     except Exception as e:
