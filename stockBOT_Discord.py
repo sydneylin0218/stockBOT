@@ -69,11 +69,15 @@ async def on_message(message):
         
         if lokiResultDICT:
             if client.user.id not in mscDICT:    # 判斷 User 是否為第一輪對話
-                mscDICT[client.user.id] = {"completed": False}        
+                mscDICT[client.user.id] = {"symbol": "",
+                                           "function": "",
+                                           "updatetime":"",
+                                           "completed": False}        
                 
     except Exception as e:
         logging.error("[MSG ERROR] {}".format(str(e)))
-        print("[MSG ERROR] {}".format(str(e)))                
+        print("[MSG ERROR] {}".format(str(e)))
+        
 
 
 class BotClient(discord.Client):
