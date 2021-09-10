@@ -3,6 +3,7 @@
 
 import discord
 import json
+import logging
 from fc_info import information
 from fc_info import growth
 from DICT import companyDICT
@@ -14,6 +15,14 @@ from ArticutAPI import Articut
 articut = Articut(username= accountDICT["username"], apikey= accountDICT["apikey"])
 
 from stockBOT import runLoki
+
+logging.basicConfig(level=logging.CRITICAL)
+
+# <取得多輪對話資訊>
+client = discord.Client()
+mscDICT = {# "userID": {Template}
+           }
+# </取得多輪對話資訊>
 
 class BotClient(discord.Client):
     async def on_ready(self):
