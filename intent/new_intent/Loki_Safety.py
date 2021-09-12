@@ -24,57 +24,56 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-
-    
     if utterance == "[聯發科][安全]嗎":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]償債能力":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]利息保障倍數":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]安全性":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]安全性分析":
-        resultDICT["function"] = "safty"
+        # write your code here
+        pass
 
     if utterance == "[聯發科]安全性指標":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]是不[是][安全]的股票":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]流動比":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]流速動比率":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]現金流量比":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]負債":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]負債比":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     if utterance == "[聯發科]速動比":
-        resultDICT["fun_safety"] = True
-
+        # write your code here
+        pass
 
     return resultDICT

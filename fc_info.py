@@ -162,6 +162,11 @@ def safety(symbol):
     result_safetyDICT = {}
     
     table = html.findAll("table")[16]
+    table_row_quarter=table.findAll("tr")[75]
+    th_quarter = table_row_quarter.findAll("td")[1]
+    quarter = th_quarter.text
+    result_safetyDICT["quarter"] = quarter
+    
     table_row_CR=table.findAll("tr")[76]
     td_CR = table_row_CR.findAll("td")[1]
     CR = td_CR.text 
