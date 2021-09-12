@@ -184,16 +184,15 @@ def safety(symbol):
     ICR = td_ICR.text 
     result_safetyDICT["ICR"] = ICR    
     
+    table_row_OCFR=table.findAll("tr")[80]
+    td_OCFR = table_row_OCFR.findAll("td")[1]
+    OCFR = td_OCFR.text 
+    result_safetyDICT["OCFR"] = OCFR    
 
-    table_row_NPM=table.findAll("tr")[4]
-    td_NPM = table_row_NPM.findAll("td")[1]
-    NPM = td_NPM.text    
-    result_profitabilityDICT["NPM"] = NPM
-
-    table_row_EPS=table.findAll("tr")[7]
-    td_EPS = table_row_EPS.findAll("td")[1]
-    EPS = td_EPS.text    
-    result_profitabilityDICT["EPS"] = EPS
+    table_row_DR=table.findAll("tr")[56]
+    td_DR = table_row_DR.findAll("td")[1]
+    DR = td_DR.text 
+    result_safetyDICT["DR"] = DR    
     
     table_row_NASPS=table.findAll("tr")[8]
     td_NASPS = table_row_NASPS.findAll("td")[1]
