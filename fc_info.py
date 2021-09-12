@@ -153,6 +153,65 @@ def profitability(symbol):
     
     return result_profitabilityDICT
 
+def safety(symbol):
+    URL = "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=XX_M_QUAR_ACC&STOCK_ID="+ symbol 
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    r = requests.post(url=URL,headers=headers)
+    html =BeautifulSoup(r.content, "html.parser")
+    
+    result_safetyDICT = {}
+    
+    table = html.findAll("table")[16]
+    table_row_CR=table.findAll("tr")[76]
+    td_CR = table_row_CR.findAll("td")[1]
+    CR = td_CR.text 
+    result_safetyDICT["CR"] = CR
+    
+    table_row_QR=table.findAll("tr")[77]
+    td_QR = table_row_QR.findAll("td")[1]
+    QR = td_QR.text 
+    result_safetyDICT["QR"] = QR    
+    
+   
+    table_row_current_ratio=table.findAll("tr")[78]
+    td_current_ratio = table_row_current_ratio.findAll("td")[1]
+    current_ratio = td_current_ratio.text 
+    result_safetyDICT["current_ratio"] = current_ratio   
+    
+
+    table_row_ICR=table.findAll("tr")[79]
+    td_ICR = table_row_ICR.findAll("td")[1]
+    ICR = td_ICR.text 
+    result_safetyDICT["ICR"] = ICR    
+    
+
+    table_row_NPM=table.findAll("tr")[4]
+    td_NPM = table_row_NPM.findAll("td")[1]
+    NPM = td_NPM.text    
+    result_profitabilityDICT["NPM"] = NPM
+
+    table_row_EPS=table.findAll("tr")[7]
+    td_EPS = table_row_EPS.findAll("td")[1]
+    EPS = td_EPS.text    
+    result_profitabilityDICT["EPS"] = EPS
+    
+    table_row_NASPS=table.findAll("tr")[8]
+    td_NASPS = table_row_NASPS.findAll("td")[1]
+    NASPS = td_NASPS.text    
+    result_profitabilityDICT["NASPS"] = NASPS
+    
+    table_row_ROW=table.findAll("tr")[9]
+    td_ROE = table_row_ROW.findAll("td")[1]
+    ROE = td_ROE.text    
+    result_profitabilityDICT["ROE"] = ROE    
+    
+    table_row_ROA=table.findAll("tr")[11]
+    td_ROA = table_row_ROA.findAll("td")[1]
+    ROA = td_ROA.text    
+    result_profitabilityDICT["ROA"] = ROA   
+    
+    return result_profitabilityDICT
+
 
     
     
