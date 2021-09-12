@@ -27,42 +27,42 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     
     if utterance == "[聯發科][安全]嗎":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]償債能力":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]利息保障倍數":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]安全性":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]安全性分析":
         resultDICT["function"] = "safty"
 
     if utterance == "[聯發科]安全性指標":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]是不[是][安全]的股票":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]流動比":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]流速動比率":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]現金流量比":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]負債":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]負債比":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     if utterance == "[聯發科]速動比":
-        resultDICT["function"] = "safty"
+        resultDICT["fun_satety"] = True
 
     return resultDICT

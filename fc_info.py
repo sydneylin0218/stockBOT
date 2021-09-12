@@ -193,24 +193,9 @@ def safety(symbol):
     td_DR = table_row_DR.findAll("td")[1]
     DR = td_DR.text 
     result_safetyDICT["DR"] = DR    
-    
-    table_row_NASPS=table.findAll("tr")[8]
-    td_NASPS = table_row_NASPS.findAll("td")[1]
-    NASPS = td_NASPS.text    
-    result_profitabilityDICT["NASPS"] = NASPS
-    
-    table_row_ROW=table.findAll("tr")[9]
-    td_ROE = table_row_ROW.findAll("td")[1]
-    ROE = td_ROE.text    
-    result_profitabilityDICT["ROE"] = ROE    
-    
-    table_row_ROA=table.findAll("tr")[11]
-    td_ROA = table_row_ROA.findAll("td")[1]
-    ROA = td_ROA.text    
-    result_profitabilityDICT["ROA"] = ROA   
-    
-    return result_profitabilityDICT
 
+    
+    return result_safetyDICT
 
     
     
