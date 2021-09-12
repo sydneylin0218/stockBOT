@@ -51,6 +51,11 @@ def growth(symbol):
     result_growthDICT = {}
     
     table = html.findAll("table")[16]
+    table_row_quarter=table.findAll("tr")[0]
+    th_quarter = table_row_quarter.findAll("th")[1]
+    quarter = th_quarter.text    
+    result_growthDICT["quarter"] = quarter    
+    
     table_row_revenue=table.findAll("tr")[14]
     td_revenue = table_row_revenue.findAll("td")[1]
     revenue_YOY = td_revenue.text
@@ -98,6 +103,11 @@ def profitability(symbol):
     result_profitabilityDICT = {}
     
     table = html.findAll("table")[16]
+    table_row_quarter=table.findAll("tr")[0]
+    th_quarter = table_row_quarter.findAll("th")[1]
+    quarter = th_quarter.text    
+    result_profitabilityDICT["quarter"] = quarter
+    
     table_row_GPM=table.findAll("tr")[1]
     td_GPM = table_row_GPM.findAll("td")[1]
     GPM = td_GPM.text

@@ -46,6 +46,7 @@ from requests import post
 from requests import codes
 from fc_info import information
 from fc_info import growth
+from fc_info import profitability
 from DICT import companyDICT
 from bs4 import BeautifulSoup
 import requests
@@ -273,12 +274,18 @@ if __name__ == "__main__":
     elif "fun_growth" in resultDICT.keys():
         result_growthDICT = growth(resultDICT["symbol"])
         resultDICT.update(result_growthDICT)
+    elif "fun_profitability" in resultDICT.keys():
+        result_growthDICT = profitabiliy(resultDICT["symbol"])
+        resultDICT.update(result_profitabilityDICT)    
+        
         
 
     if "fun_information" in resultDICT.keys():
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
     elif "fun_growth" in resultDICT.keys():
-        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
+    elif "fun_profitability" in resultDICT.keys():
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT    _YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
     elif resultDICT["symbol"] == None:
         print("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
     else:

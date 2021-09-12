@@ -52,12 +52,18 @@ class BotClient(discord.Client):
                 elif resultDICT["fun_growth"] == True:
                     result_growthDICT = growth(resultDICT["symbol"])
                     resultDICT.update(result_growthDICT)
+                elif resultDICT["fun_profitability"] ==True:
+                    result_profitabilityDICT = profitability(resultDICT["symbol"])
+                    resultDICT.update(result_profitabilityDICT)                
+                    
                     
             
                 if resultDICT["fun_information"] == True:
                     await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的公司基本資料如下！"+"\n公司名稱："+resultDICT["name"]+"\n產業別："+resultDICT["industry"]+"\n市值："+resultDICT["value"]+"\n主要業務："+resultDICT["business"])  
                 elif resultDICT["fun_growth"] == True:
-                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"]) 
+                elif resultDICT["fun_growth"] == True:
+                    await message.reply(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的本季獲利情形如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["N                IBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"]) 
                 elif resultDICT["symbol"] == None:
                     await message.reply("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
                 else:

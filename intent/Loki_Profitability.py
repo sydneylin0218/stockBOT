@@ -25,51 +25,51 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[聯發科]ROA及ROE":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]ROEROA":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]ROE及ROA":
-        resultDICT["function"] = "profitability"
-
+        resultDICT["fun_profitability"] = True
+        
     if utterance == "[聯發科]利潤比率":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]存貨周轉率":
-        resultDICT["function"] = "profitability"
-
+        resultDICT["fun_profitability"] = True
+        
     if utterance == "[聯發科]營運周轉能力":
-        resultDICT["function"] = "profitability"
+       resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]獲利[相關]指標":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]獲利情形":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
     
     if utterance == "[聯發科]獲利情況":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]獲利指標":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]獲利能力":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]的ROA":
-        resultDICT["function"] = "profitability"
-
+        resultDICT["fun_profitability"] = True
+        
     if utterance == "[聯發科]的ROE":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]股東權益報酬率":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[聯發科]資產報酬率":
-        resultDICT["function"] = "profitability"
+        resultDICT["fun_profitability"] = True
 
     if utterance == "[連發科]應收帳款週轉率":
-        resultDICT["function"] = "profitability"
-
+        resultDICT["fun_profitability"] = True
+        
     return resultDICT
