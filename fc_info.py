@@ -136,6 +136,11 @@ def profitability(symbol):
     ROE = td_ROE.text    
     result_profitabilityDICT["ROE"] = ROE    
     
+    table_row_ROA=table.findAll("tr")[11]
+    td_ROA = table_row_ROA.findAll("td")[1]
+    ROA = td_ROA.text    
+    result_profitabilityDICT["ROA"] = ROA   
+    
     return result_profitabilityDICT
 
 
