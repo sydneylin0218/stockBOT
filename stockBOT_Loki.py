@@ -261,7 +261,7 @@ if __name__ == "__main__":
     
 
     # 輸入其它句子試看看
-    inputLIST = ["聯發科獲利成長情形"]
+    inputLIST = ["聯發科獲利情形"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
@@ -275,7 +275,7 @@ if __name__ == "__main__":
         result_growthDICT = growth(resultDICT["symbol"])
         resultDICT.update(result_growthDICT)
     elif "fun_profitability" in resultDICT.keys():
-        result_growthDICT = profitabiliy(resultDICT["symbol"])
+        result_growthDICT = profitability(resultDICT["symbol"])
         resultDICT.update(result_profitabilityDICT)    
         
         
@@ -285,7 +285,7 @@ if __name__ == "__main__":
     elif "fun_growth" in resultDICT.keys():
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
     elif "fun_profitability" in resultDICT.keys():
-        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT    _YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的獲利情形如下！"+"\n營業毛利率："+resultDICT["GPM"]+"\n營業利益率："+resultDICT["OPM"]+"\稅前淨利率："+resultDICT["PTPM"]+"\稅後淨利率："+resultDICT["NPM"]+"\n每股稅後盈餘："+resultDICT["EPS"]+"\n每股淨值(元)："+resultDICT["NASPS"]+"\n股東權益報酬率："+resultDICT["ROE"]+"\n資產報酬率："+resultDICT["ROA"])    
     elif resultDICT["symbol"] == None:
         print("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
     else:
