@@ -89,6 +89,55 @@ def growth(symbol):
     
     return result_growthDICT
 
+def profitability(symbol):
+    URL = "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=XX_M_QUAR_ACC&STOCK_ID="+ symbol 
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    r = requests.post(url=URL,headers=headers)
+    html =BeautifulSoup(r.content, "html.parser")
+    
+    result_profitabilityDICT = {}
+    
+    table = html.findAll("table")[16]
+    table_row_GPM=table.findAll("tr")[1]
+    td_GPM = table_row_GPM.findAll("td")[1]
+    GPM = td_GPM.text
+    result_profitabilityDICT["GPM"] = GPM
+    
+   
+    table_row_OPM=table.findAll("tr")[2]
+    td_OPM = table_row_OPM.findAll("td")[1]
+    OPM = td_OPM.text    
+    result_profitabilityDICT["OPM"] = OPM
+    
+
+    table_row_PTPM=table.findAll("tr")[3]
+    td_PTPM = table_row_PTPM.findAll("td")[1]
+    PTPM = td_PTPM.text    
+    result_profitabilityDICT["PTPM"] = PTPM
+    
+
+    table_row_NPM=table.findAll("tr")[4]
+    td_NPM = table_row_NPM.findAll("td")[1]
+    NPM = td_NPM.text    
+    result_profitabilityDICT["NPM"] = NPM
+
+    table_row_EPS=table.findAll("tr")[7]
+    td_EPS = table_row_EPS.findAll("td")[1]
+    EPS = td_EPS.text    
+    result_profitabilityDICT["EPS"] = EPS
+    
+    table_row_NASPS=table.findAll("tr")[8]
+    td_NASPS = table_row_NASPS.findAll("td")[1]
+    NASPS = td_NASPS.text    
+    result_profitabilityDICT["NASPS"] = NASPS
+    
+    table_row_ROW=table.findAll("tr")[9]
+    td_ROE = table_row_ROW.findAll("td")[1]
+    ROE = td_ROE.text    
+    result_profitabilityDICT["ROE"] = ROE    
+    
+    return result_profitabilityDICT
+
 
     
     
