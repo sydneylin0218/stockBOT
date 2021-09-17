@@ -273,7 +273,8 @@ if __name__ == "__main__":
     
 
     # 輸入其它句子試看看
-    inputLIST = ["償債能力是什麼"]
+    
+    inputLIST = ["速動比率是什麼"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
