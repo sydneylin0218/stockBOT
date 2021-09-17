@@ -35,10 +35,8 @@ class BotClient(discord.Client):
         if self.user.mentioned_in(message):
             print("本 bot 被叫到了！")
             msg = message.content.replace("<@!{}> ".format(self.user.id), "")
-            if msg == 'ping':
-                await message.reply('pong')
-            if msg == 'ping ping':
-                await message.reply('pong pong')
+            if msg in ("hi","hello","嗨"):
+                await message.reply("嗨，我是一個查詢上市半導體公司股票財報資料的BOT！請輸入公司名或是股票代碼與想要查詢的資訊(公司基本資料、財報分析指標)。若有不懂的財報名詞也可以問我喔！")         
             else:
                 inputLIST = [msg]
                 filterLIST = []
