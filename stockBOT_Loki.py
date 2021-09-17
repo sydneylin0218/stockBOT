@@ -58,6 +58,7 @@ try:
     from intent import Loki_Safety
     from intent import Loki_information
     from intent import Loki_revenue
+    from intent import Loki_what_is
     from intent import Loki_Profitability
     from intent import Loki_Growth
 except:
@@ -65,6 +66,7 @@ except:
     from .intent import Loki_Safety
     from .intent import Loki_information
     from .intent import Loki_revenue
+    from .intent import Loki_what_is
     from .intent import Loki_Profitability
     from .intent import Loki_Growth
 
@@ -204,7 +206,10 @@ def runLoki(inputLIST, filterLIST=[]):
                 # revenue
                 if lokiRst.getIntent(index, resultIndex) == "revenue":
                     resultDICT = Loki_revenue.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)       
-                
+                # what_is
+                if lokiRst.getIntent(index, resultIndex) == "what_is":
+                    resultDICT = Loki_what_is.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    
                 # Profitability
                 if lokiRst.getIntent(index, resultIndex) == "Profitability":
                     resultDICT = Loki_Profitability.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)          
@@ -248,6 +253,12 @@ if __name__ == "__main__":
     testLoki(inputLIST, ['revenue'])
     print("")
     
+    # what_is
+    print("[TEST] what_is")
+    inputLIST = ['什麼是償債能力','償債能力是什麼']
+    testLoki(inputLIST, ['what_is'])
+    print("")
+    
     # Profitability
     print("[TEST] Profitability")
     inputLIST = ['聯發科ROEROA','聯發科的ROA','聯發科的ROE','聯發科ROA及ROE','聯發科ROE及ROA','聯發科利潤比率','聯發科獲利情形','聯發科獲利情況','聯發科獲利指標','聯發科獲利能力','聯發科存貨周轉率','聯發科資產報酬率','聯發科營運周轉能力','聯發科獲利相關指標','聯發科股東權益報酬率','連發科應收帳款週轉率']
@@ -262,7 +273,7 @@ if __name__ == "__main__":
     
 
     # 輸入其它句子試看看
-    inputLIST = ["聯發科償債能力"]
+    inputLIST = ["償債能力是什麼"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
@@ -289,9 +300,11 @@ if __name__ == "__main__":
     elif "fun_growth" in resultDICT.keys():
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的獲利年成長率如下！"+"\n營收年成長率："+resultDICT["revenue_YOY"]+"\n毛利年成長率："+resultDICT["gross_profit_YOY"]+"\n營業利益年成長率："+resultDICT["operating_income_YOY"]+"\n稅前淨利年成長率："+resultDICT["NIBT_YOY"]+"\n稅後淨利年成長率："+resultDICT["NI_YOY"]+"\n每股稅後盈餘年成長率："+resultDICT["EPS_YOY"])    
     elif "fun_profitability" in resultDICT.keys():
-        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的償債能力如下！"+"\n營業毛利率："+resultDICT["GPM"]+"\n營業利益率："+resultDICT["OPM"]+"\n稅前淨利率："+resultDICT["PTPM"]+"\n稅後淨利率："+resultDICT["NPM"]+"\n每股稅後盈餘："+resultDICT["EPS"]+"\n每股淨值(元)："+resultDICT["NASPS"]+"\n股東權益報酬率："+resultDICT["ROE"]+"\n資產報酬率："+resultDICT["ROA"])    
+        print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的獲利能力如下！"+"\n營業毛利率："+resultDICT["GPM"]+"\n營業利益率："+resultDICT["OPM"]+"\n稅前淨利率："+resultDICT["PTPM"]+"\n稅後淨利率："+resultDICT["NPM"]+"\n每股稅後盈餘："+resultDICT["EPS"]+"\n每股淨值(元)："+resultDICT["NASPS"]+"\n股東權益報酬率："+resultDICT["ROE"]+"\n資產報酬率："+resultDICT["ROA"])    
     elif "fun_safety" in resultDICT.keys():
         print(companyDICT[resultDICT["symbol"]][0]+resultDICT["symbol"]+"在"+resultDICT["quarter"]+"的償債能力如下！"+"\n現金比："+resultDICT["CR"]+"\n速動比："+resultDICT["QR"]+"\n流動比："+resultDICT["current_ratio"]+"\n利息保障倍數："+resultDICT["ICR"]+"\n現金流量比："+resultDICT["OCFR"]+"\n負債總額比(元)："+resultDICT["DR"])    
+    elif "reply" in resultDICT.keys():
+        print(resultDICT["reply"])
     elif resultDICT["symbol"] == None:
         print("不確定您要找哪一支股票的資訊！請再輸入一次股票名稱或是代號！")
     else:
