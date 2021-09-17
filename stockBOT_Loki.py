@@ -274,7 +274,7 @@ if __name__ == "__main__":
 
     # 輸入其它句子試看看
     
-    inputLIST = ["成本是什麼"]
+    inputLIST = ["普通股每股盈餘是什麼"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
