@@ -3,8 +3,6 @@
 
 import discord
 import json
-import logging
-import re
 from fc_info import information
 from fc_info import growth
 from fc_info import safety

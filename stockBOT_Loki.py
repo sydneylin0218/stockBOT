@@ -57,7 +57,6 @@ try:
     from intent import Loki_symbol
     from intent import Loki_Safety
     from intent import Loki_information
-    from intent import Loki_revenue
     from intent import Loki_what_is
     from intent import Loki_Profitability
     from intent import Loki_Growth
@@ -65,7 +64,6 @@ except:
     from .intent import Loki_symbol
     from .intent import Loki_Safety
     from .intent import Loki_information
-    from .intent import Loki_revenue
     from .intent import Loki_what_is
     from .intent import Loki_Profitability
     from .intent import Loki_Growth
@@ -274,7 +272,7 @@ if __name__ == "__main__":
 
     # 輸入其它句子試看看
     
-    inputLIST = ["現金流量比是什麼"]
+    inputLIST = ["大榮的獲利情形"]
     filterLIST = []
     resultDICT = runLoki(inputLIST, filterLIST)
     print("Result => {}".format(resultDICT))
